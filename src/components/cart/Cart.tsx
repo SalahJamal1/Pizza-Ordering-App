@@ -20,7 +20,7 @@ function Cart() {
       </Link>
 
       <h2 className="block capitalize tracking-wide">Your cart, {user}</h2>
-      <ul className="divide-y divide-slate-400 border-b border-slate-400">
+      <ul className="divide-y divide-slate-400  overflow-y-scroll h-[40vh] rounded-2xl">
         {cart.map((item) => (
           <CartItem item={item} key={item.pizzaId} />
         ))}
