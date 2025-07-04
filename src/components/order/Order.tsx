@@ -37,7 +37,7 @@ function Order() {
     estimatedDelivery,
     cart,
   } = order;
-  const deliveryIn = calcMinutesLeft(estimatedDelivery);
+  const deliveryIn = calcMinutesLeft(estimatedDelivery ?? "");
 
   const onUpdate = async () => {
     const data = { ...order, priority: true };
@@ -73,10 +73,10 @@ function Order() {
       <div className="flex items-center justify-between bg-slate-300 px-2 py-2">
         <p className="font-semibold tracking-wider">
           {deliveryIn >= 0
-            ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
+            ? `Only ${calcMinutesLeft(estimatedDelivery ?? "")} minutes left 😃`
             : "Order should have arrived"}
         </p>
-        <p>(Estimated delivery: {formatDate(estimatedDelivery)})</p>
+        <p>(Estimated delivery: {formatDate(estimatedDelivery ?? "")})</p>
       </div>
 
       <ul className="divide-y divide-slate-400">
