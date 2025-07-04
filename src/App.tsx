@@ -9,6 +9,7 @@ import { menuLoader } from "./components/menu/menuLoader";
 import Order from "./components/order/Order";
 import CreateOrder from "./components/order/CreateOrder";
 import { orderLoader } from "./components/order/orderLoader";
+import Loader from "./ui/Loader";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
 ]);
 export default function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<Loader />}>
       <RouterProvider router={router} />
     </Suspense>
   );
