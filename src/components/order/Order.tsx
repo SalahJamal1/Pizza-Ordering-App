@@ -52,7 +52,7 @@ function Order() {
   }, [fetcher]);
   const menu: menuItem[] = fetcher.data ?? [];
   return (
-    <div className="max-w-[700px] mx-auto space-y-8">
+    <div className="max-w-[700px] mx-auto space-y-8 py-6">
       <div className="flex items-center justify-between">
         <h2 className="font-semibold tracking-wider">
           Order {order.id} Status
